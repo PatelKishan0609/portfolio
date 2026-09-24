@@ -4,16 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Patel Kishan — second-year engineering student at Government Engineering College, Modasa. C, C++ and web design.">
     <title>PATEL KISHAN - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body data-theme="dark"> <!-- Default theme: dark -->
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- ======================================================
+         NAV — AI-assisted
+         Original nav list kept; added brand mark, theme
+         switcher and active-link highlighting.
+         ====================================================== -->
     <header>
-        <nav class="sticky-nav">
+        <nav class="sticky-nav" aria-label="Main">
+            <a class="nav-mark" href="#home">PK</a>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -22,32 +31,79 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="theme-switcher" role="group" aria-label="Colour theme">
+                <button type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
+                <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+                <button type="button" data-theme-choice="auto" aria-pressed="false">Auto</button>
+            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Home Section -->
-        <section id="home" class="section home">
-            <div class="intro">
-                <h1>PATEL KISHAN</h1>
-                <p class="tagline">Aspiring Web Designer & C Programmer</p>
-                <img src="IMAGES/PROFILE.jpeg" alt="PATEL KISHAN Profile Picture" class="profile-pic">
-                <p class="intro-message">I'm a first-year student at Government Engineering College, Modasa, dedicated
-                    to improving my programming skills in C and HTML while building a foundation for software
-                    development.</p>
-                <button class="contact-btn" onclick="scrollToSection('#contact')">Contact Me</button>
 
-                <!-- Theme Switcher Buttons -->
-                <div class="theme-switcher">
-                    <button onclick="setTheme('dark')">Dark Theme</button>
-                    <button onclick="setTheme('light')">Light Theme</button>
-                    <button onclick="setTheme('auto')">Auto (System)</button>
+        <!-- ==================================================
+             HOME — AI-assisted (rebuilt)
+             ================================================== -->
+        <section id="home" class="section ai home">
+            <p class="tag tag-ai">AI-assisted section</p>
+
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Government Engineering College, Modasa</p>
+                    <h1 class="hero-name">PATEL<br>KISHAN</h1>
+                    <p class="hero-tagline">Second-year engineering student learning C, C++ and web design.</p>
+                    <p class="hero-message">I build small programs to understand how things work, then rebuild them
+                        better. This site is hand-written HTML and CSS — no framework, no page builder.</p>
+                    <div class="hero-actions">
+                        <a class="hero-btn hero-btn-solid" href="#contact">Contact me</a>
+                        <a class="hero-btn hero-btn-quiet" href="#projects">See my work</a>
+                    </div>
+                </div>
+
+                <div class="hero-side">
+                    <figure class="portrait">
+                        <img src="IMAGES/PROFILE.jpeg" alt="Patel Kishan" id="portrait-img" width="80" height="80">
+                        <figcaption>Modasa, Gujarat</figcaption>
+                    </figure>
+
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-file">kishan.c</span>
+                        </div>
+<pre class="terminal-code"><code><span class="c-pre">#include</span> <span class="c-str">&lt;stdio.h&gt;</span>
+
+<span class="c-key">struct</span> student {
+    <span class="c-key">char</span> *name;
+    <span class="c-key">int</span>   year;
+};
+
+<span class="c-key">int</span> <span class="c-fn">main</span>(<span class="c-key">void</span>) {
+    <span class="c-key">struct</span> student me = {
+        <span class="c-str">"Patel Kishan"</span>, <span class="c-num">2</span>
+    };
+    <span class="c-fn">printf</span>(<span class="c-str">"%s, year %d\n"</span>,
+           me.name, me.year);
+    <span class="c-key">return</span> <span class="c-num">0</span>;
+}</code></pre>
+                        <div class="terminal-run">
+                            <p class="terminal-cmd"><span class="terminal-prompt">$</span> gcc kishan.c -o kishan &amp;&amp; ./kishan</p>
+                            <p class="terminal-out" id="terminal-out" aria-live="polite"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
+        <!-- ==================================================
+             ABOUT — written by Patel Kishan
+             Original markup, unchanged.
+             ================================================== -->
+        <section id="about" class="section human">
+            <p class="tag tag-human">Hand-coded by me</p>
+
             <h2>About Me</h2>
             <p>I’m a second-year student at Government Engineering College, Modasa, passionate about coding and web
                 design. I enjoy learning new technologies and improving my problem-solving skills through programming.
@@ -66,8 +122,13 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
+        <!-- ==================================================
+             SKILLS — written by Patel Kishan
+             Original markup, unchanged.
+             ================================================== -->
+        <section id="skills" class="section human">
+            <p class="tag tag-human">Hand-coded by me</p>
+
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill">
@@ -92,48 +153,103 @@
             <p>Currently Learning: Exploring new languages and frameworks.</p>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section">
-            <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Web Design</h3>
-                    <p>Designing modern, user-friendly websites using HTML and clean layouts.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Coding</h3>
-                    <p>Writing efficient, readable code in C and helping with coding-related projects.</p>
-                </div>
+        <!-- ==================================================
+             SERVICES — AI-assisted (rebuilt)
+             ================================================== -->
+        <section id="services" class="section ai">
+            <p class="tag tag-ai">AI-assisted section</p>
+
+            <h2 class="ai-heading">What I can help with</h2>
+            <p class="ai-note">Small jobs I can take on right now, at my current level.</p>
+
+            <div class="ai-cards">
+                <article class="ai-card">
+                    <h3>Simple websites</h3>
+                    <p>Small, fast pages written by hand in HTML and CSS — a personal site, a college event page, or
+                        a landing page for a club.</p>
+                </article>
+                <article class="ai-card">
+                    <h3>C and C++ coursework</h3>
+                    <p>Working through assignments, finding the bug that's been hiding for two hours, and explaining
+                        why the fix actually works.</p>
+                </article>
+                <article class="ai-card">
+                    <h3>Tidying up code</h3>
+                    <p>Taking something that runs and making it readable: clearer names, fewer repeats, and comments
+                        that earn their place.</p>
+                </article>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
+        <!-- ==================================================
+             PROJECTS — written by Patel Kishan
+             Original markup, unchanged.
+             ================================================== -->
+        <section id="projects" class="section human">
+            <p class="tag tag-human">Hand-coded by me</p>
+
             <h2>Projects</h2>
             <p>Coming Soon – Exciting projects in progress!</p>
             <blockquote>"The journey of a thousand miles begins with a single step." - Lao Tzu</blockquote>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xldpykbk"
-                method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="send-btn">Send Message</button>
-            </form>
-            <p id="form-status"></p> <!-- For success/error messages -->
-            <div class="contact-info">
-                <p>Email: [patelkishank07@gmail.com]</p>
-                <p>Phone: [9274458782]</p>
-                <!-- Social Icons (placeholders) -->
-                <a href="#" class="social-icon">LinkedIn</a>
-                <a href="#" class="social-icon">GitHub</a>
+        <!-- ==================================================
+             CONTACT — AI-assisted (rebuilt)
+             Same Formspree endpoint as the original.
+             ================================================== -->
+        <section id="contact" class="section ai">
+            <p class="tag tag-ai">AI-assisted section</p>
+
+            <div class="contact-grid">
+                <div class="contact-intro">
+                    <h2 class="ai-heading">Contact Me</h2>
+                    <p class="ai-note">If you'd like to work on something together, or you have feedback on this
+                        site, send me a message.</p>
+
+                    <dl class="contact-info">
+                        <div>
+                            <dt>Email</dt>
+                            <dd><a href="mailto:patelkishank07@gmail.com">patelkishank07@gmail.com</a></dd>
+                        </div>
+                        <div>
+                            <dt>Phone</dt>
+                            <dd><a href="tel:+919274458782">+91 92744 58782</a></dd>
+                        </div>
+                        <div>
+                            <dt>Elsewhere</dt>
+                            <dd class="contact-social">
+                                <a href="#" class="social-icon">LinkedIn</a>
+                                <a href="#" class="social-icon">GitHub</a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/xldpykbk" method="POST">
+                    <div class="field">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Your email</label>
+                        <input type="email" id="email" name="_replyto" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="send-btn">Send Message</button>
+                    <p id="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
         </section>
     </main>
+
+    <!-- FOOTER — AI-assisted -->
+    <footer class="footer">
+        <p>Built by Patel Kishan, Modasa. Sections marked “AI-assisted” were designed with help from an AI tool.</p>
+        <p><a href="#home">Back to top</a></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
